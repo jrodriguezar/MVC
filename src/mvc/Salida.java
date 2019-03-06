@@ -17,7 +17,7 @@ import javafx.stage.Stage;
  *
  * @author Jhon
  */
-public class Salida extends Application{
+public class Salida /*extends Application*/{
     
     private Scene scene;
     
@@ -29,7 +29,7 @@ public class Salida extends Application{
     private Button regreso;
     private HBox hbox;
     
-    @Override
+    /*@Override
     public void start(Stage primaryStage) throws Exception {
         grid = new GridPane();
         grid.setAlignment(Pos.CENTER);
@@ -56,7 +56,7 @@ public class Salida extends Application{
         primaryStage.setTitle("Lista");
         primaryStage.setScene(scene);
         primaryStage.show();
-    }
+    }*/
     
     public Salida() {
         //Layout
@@ -66,7 +66,8 @@ public class Salida extends Application{
         grid.setVgap(10);
         grid.setPadding(new Insets(25, 25, 25, 25));
         
-        scenetitle = new Text("Holi");
+        scenetitle = new Text("Lista: ");
+        scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
         grid.add(scenetitle, 0, 0, 2, 1);
         
         list = new ListView<>();
@@ -76,7 +77,7 @@ public class Salida extends Application{
         regreso = new Button("Regresar");
         
         hbox = new HBox(10);
-        hbox.setAlignment(Pos.BOTTOM_RIGHT);
+        hbox.setAlignment(Pos.BOTTOM_CENTER);
         hbox.getChildren().add(regreso);
         grid.add(hbox, 0, 2);
         
@@ -84,7 +85,7 @@ public class Salida extends Application{
     }
     
     public void mostrar(Stage stage){
-        stage.setTitle("Holi");
+        stage.setTitle("Salida");
         stage.setScene(scene);
         stage.show();
     }
@@ -97,7 +98,7 @@ public class Salida extends Application{
         return regreso;
     }
     
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         Application.launch(args);
-    }
+    }*/
 }
